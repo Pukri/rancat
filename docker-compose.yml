@@ -1,12 +1,22 @@
 version: '2'
 services:
-  hello-gopher:
-    build: ./src
+  backend:
+    build: backend
     command: go run main.go
     volumes:
-      - ./src:/go/src/app
+      - ./backend:/go/src/app
     working_dir: /go/src/app
     ports:
-      - "3001:3001"
+      - 3001:3001
     environment:
       PORT: 3001
+
+  frontend:
+    build: frontend
+    tty: true
+    environment:
+      ENDPOINT: http://localhost:3001
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+    ports:
+      - 8000:8000

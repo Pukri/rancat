@@ -14,7 +14,7 @@ Learning go - Serving daily dose of random cat images
 App is running on port 3001 [http://localhost:3001/](http://localhost:3001/)
 
 # Todo
-- [ ] Split application into frontend and backend
+- [x] Split application into frontend and backend
 - [ ] Add new features
 - [ ] Add styling (Maybe utilize [UIgit](https://getuikit.com/docs/background)?)
 

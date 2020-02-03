@@ -1,0 +1,47 @@
+@font_family: 'Open Sans', sans-serif;
+
+@black: #000000;
+@white: #ffffff;
+@light_gray: #eeeeee;
+@background_color: @light_gray;
+
+@primary_color: #010101;
+
+
+body {
+  font-family: @font_family !important;
+  background-color: @background_color;
+  height: auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: @font_family !important;
+  font-weight: 900 !important;
+}
+
+#app, #app > div {
+  height: 100%;
+}
+
+.main-wrapper {
+  max-width: 700px;
+  padding: 60px;
+  margin: 0 auto;
+}
+
+.styled-button {
+  background-color: rgb(68, 101, 212);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 900px) {
+  .main-wrapper {
+    padding: 20px;
+  }
+}
