@@ -3,7 +3,7 @@ name: Node.js CI
 on: [push]
 
 jobs:
-  run-linters:
+  run-lint:
     name: Run linters
     runs-on: ubuntu-latest
 
@@ -14,11 +14,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      # ESLint and Prettier must be in `package.json`
-      - name: Install Node.js dependencies
-        run: cd frontend && npm install
       - name: Run lint
-        run: cd frontend && npm run lint
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm lint
         
   build:
     runs-on: ubuntu-latest
