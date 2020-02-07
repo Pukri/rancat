@@ -3,11 +3,16 @@ name: Node.js CI
 on: [push]
 
 jobs:
+  lint frontend:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Navigate
+      run: cd frontend
+    - name: Run lint
+      run: npm run lint
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
     steps:
     - uses: actions/checkout@v1
     - name: Build the docker-compose stack
