@@ -1,4 +1,5 @@
 ![Node.js CI](https://github.com/Pukri/rancat/workflows/Node.js%20CI/badge.svg)
+
 ![Image of rancat](https://cataas.com/cat?type=sq)
 
 # rancat
