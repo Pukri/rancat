@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run lint
-      run: cd frontend && npm run lint
+      run: cd frontend && npm install && npm run lint
   build:
     runs-on: ubuntu-latest
     steps:
