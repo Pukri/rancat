@@ -2,24 +2,7 @@ name: Node.js CI
 
 on: [push]
 
-jobs:
-  run-lint:
-    name: Run linters
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Run lint
-        working-directory: ./frontend
-        run: |
-          npm install
-          npm lint
-        
+jobs:     
   build:
     runs-on: ubuntu-latest
     steps:
@@ -30,3 +13,5 @@ jobs:
       run: docker ps -a
     - name: Check logs
       run: docker-compose logs
+    - name: Lint
+      run: docker exec -it frontend_1 npm run lint
